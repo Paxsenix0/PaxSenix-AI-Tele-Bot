@@ -91,7 +91,7 @@ bot.on("message:text", async (ctx) => {
            'content': ctx.msg.text
           });
         const requestBody = {
-          'model': 'claude-3-haiku-20240307',
+          'model': 'meta-llama\/Meta-Llama-3-70B-Instruct',
           'max_tokens': 300,
           'temperature': 0.9,
           'messages': messageItems
@@ -99,7 +99,7 @@ bot.on("message:text", async (ctx) => {
         ctx.replyWithChatAction('typing');
         const response = await fetch(`https://paxsenix-ai.onrender.com/v1/chat/completions`, {
            headers: { 
-             'Authorization': 'Bearer senix-6t6p3qh8m29EVnXWHDw',
+             'Authorization': `Bearer ${Deno.env.get("APIKEY")}`,
              'Content-Type': 'application/json'
            },
            method: 'POST',
