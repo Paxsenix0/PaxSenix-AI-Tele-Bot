@@ -40,6 +40,7 @@ Here are some basic commands to help you navigate and use the PaxSenix AI Telegr
 - `/start`: Initiates interaction with the bot.
 - `/subscribe`: Subscribes you to the bot for updates and additional features.
 - `/unsubscribe`: Unsubscribes you from the bot for updates and additional features.
+- `/clear`: Clear your conversation with the bot.
 - `/help`: Provides a list of available commands and their descriptions.
 
 ## Examples
