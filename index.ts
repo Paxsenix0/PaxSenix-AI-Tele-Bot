@@ -5,7 +5,7 @@ interface Subscribers {
     id: string;
 }
 
-const token = Deno.env.get("TELEGRAM_BOT_TOKEN");
+const token = Deno.env.get("TELEGRAM_BOT_TOKEN") || 'Your Bot Token';
 const bot = new Bot(token);
 
 bot.command("start", (ctx) => ctx.reply("Hello! Send /subscribe to start chat with me!", {
