@@ -42,10 +42,19 @@ bot.command("clear", async (ctx) => {
   const id = ctx.from.id;
   const kv = await Deno.openKv();
   await kv.delete(["chats", id]);
-  ctx.reply("Cleared up your chats history", {
+  ctx.reply("Your conversation has been cleared up!", {
     reply_parameters: {
       message_id: ctx.msg.message_id
     }
+  });
+});
+
+bot.command("help", async (ctx) => {
+  ctx.reply("**PaxSenixAI Help**\n\nHi! I'm here to help you with anything you need. Here are some examples of things you can ask me or talk to me about:\n\n\n**Converse**: Just chat with me like you would with a friend! Ask me about your day, your interests, or anything on your mind.\n\n**Ask Questions**: Got a question about something? I'll do my best to provide a helpful answer. It can be about science, history, entertainment, or anything else!\n\n**Generate Text**: Need help with writing something? I can generate text on a topic of your choice, like a story, poem, or even a joke!\n\n**Play Games**: We can play simple text-based games like Hangman, 20 Questions, or Word Chain.\n\n**Learn Something New**: Want to learn a new skill or topic? I can provide explanations, examples, and resources to help you get started.\n\n**Just for Fun**: If you need a break or a pick-me-up, I can share some fun facts, jokes, or inspiring quotes with you!\n\nWhat would you like to do? Start Interact with me by send /subscribe", {
+    reply_parameters: {
+      message_id: ctx.msg.message_id
+    },
+    parse_mode: 'MarkdownV2'
   });
 });
 
